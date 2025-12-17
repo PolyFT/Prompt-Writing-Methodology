@@ -1,6 +1,5 @@
 # 🧠 科研场景下面向大模型的 Prompt 编写规范  
 *Research-Oriented Prompt Writing Methodology for Large Language Models*
-
 ---
 
 ## 📌 文档定位说明
