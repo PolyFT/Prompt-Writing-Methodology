@@ -3,103 +3,154 @@
 
 ---
 
-## 📌 文档定位说明 (Document Orientation)
+## 📌 文档定位说明
 
-**中文**  
-这是一份系统性指南，旨在规范科研场景中使用大语言模型（LLM）进行
-**提示词（Prompt）编写**时的策略、原则与约束。
+本文档用于集中阐述在科研活动中使用大语言模型（LLM）时的  
+**提示词（Prompt）编写方法学、规范原则与使用约束**。
 
-**English**  
-This is a systematic guideline designed to regulate the strategies, principles, and constraints
-when crafting prompts for large language models (LLMs) in research scenarios.
+本规范体系旨在系统性解决科研场景中 AI 辅助写作与文本生成过程中
+普遍存在的以下问题：
 
-### 目标 (Goals):
+- 语义漂移  
+- 概念外推  
+- 结论越权  
+- 科研责任边界不清  
 
-- **中文** 解决科研场景中 AI 辅助写作与文本生成中的常见问题：
-  - **语义漂移**
-  - **概念外推**
-  - **结论越权**
-  - **科研责任边界模糊**
-
-- **English** Address common issues in AI-assisted writing and text generation for research:
-  - **Semantic drift**
-  - **Extrapolation of concepts**
-  - **Overstepping conclusions**
-  - **Blurring the boundaries of research responsibility**
-
-### 定位 (Positioning):
-
-- **中文** 确保科研文本在 **学术精准性、表达规范性与责任明确性** 上始终保持
-  **可控、可追溯、可审查**。
-
-- **English** Ensure that research texts maintain **academic precision, normative expression, and clear responsibility**.
+从而确保模型输出在 **学术语义、表达规范与科研责任** 层面始终可控、可追溯、可审查。
 
 ---
 
-## 一、制定背景与核心立场 (Background & Core Principles)
+## 一、制定背景与核心立场
 
-**中文**  
-随着大语言模型（LLM）逐步嵌入科研写作、方法论构建、图示设计、学术沟通等场景，Prompt 的重要性已从简单的“人机交互指令”转变为：
-> **决定科研文本质量与学术合规性的关键环节**
+随着大语言模型逐步嵌入科研写作、方法学整理、图示构建、
+项目文本编制及审稿意见回复等 **高强度、强约束学术场景**，
+Prompt 已不再是简单的人机交互指令，而成为：
 
-**English**  
-As large language models (LLMs) are increasingly integrated into scientific writing, methodological construction, diagram design, and academic communication, the importance of prompts has evolved from simple "human-computer interaction commands" to:
-> **A critical step determining the quality and compliance of academic texts.**
+> **直接影响科研文本质量与学术合规性的关键输入环节**
 
----
+本规范体系基于以下基本立场建立：
 
-## 二、适用范围 (Scope of Application)
-
-### 适用于 (Applicable to):
-
-- **中文**  
-  - SCI 期刊论文写作及修改
-  - 方法学描述、结果解读与图表整理
-  - 各级科研项目文本编制
-  - 学术审稿意见回复
-
-- **English**  
-  - Writing and editing of SCI journal papers
-  - Methodological descriptions, result interpretations, and chart organization
-  - Drafting of scientific project proposals at various levels
-  - Responding to academic review comments
-
-### 不适用于 (Not applicable to):
-
-- **中文** 自由探索、创意发散的开放式写作场景。
-- **English** Open writing scenarios focused on free exploration or creative brainstorming.
+- 大语言模型仅作为 **受约束的科研辅助工具**
+- Prompt 本身应被视为一种 **科研输入建模过程**
+- 所有科研判断、结论与学术责任 **始终由研究者本人承担**
+- AI 输出 **不得替代** 研究决策、机理判断或价值评价
 
 ---
 
-## 三、Prompt 的本质角色 (The Essential Role of Prompts)
+## 二、适用范围
 
-**中文**  
-科研情境中的 Prompt 应被视为：  
-1. **研究边界的正式化定义**。
-2. **限制信息处理与生成范围的显性约定**。
-3. **输入行为对模型生成的结构化建模**。
+本规范适用于以下科研相关场景中对大语言模型的使用：
 
-**English**  
-In research contexts, prompts should be seen as:
-1. **A formal definition of research boundaries.**
-2. **An explicit agreement to limit the scope of information processing and generation.**
-3. **A structured modeling of input behavior for model generation.**
+- SCI 期刊论文写作与修改  
+- 结果讨论、方法学描述与图注整理  
+- 国家级及省部级科研项目文本编制  
+- 审稿意见回复与正式学术沟通文本  
+- 对一致性、可复现性要求较高的内部研究文档  
 
----
+**不适用于**：
 
-## 四、科研 Prompt 的十条硬约束 (10 Rigid Constraints for Research Prompts)
-
-1. **中文** 禁止要求生成新科学问题或研究假设。
-   **English** Do not ask the model to generate new scientific questions or hypotheses.
-
-2. **中文** 禁止要求进行价值评估或创新性判断。  
-   **English** Do not ask for value assessments or judgments of innovation.
-
-3. **中文** 禁止补充未明确输入的实验事实。  
-   **English** Do not supplement experimental facts that are not explicitly provided.
-
-...(Details omitted for brevity. Full translation available in update)...
+- 开放式头脑风暴  
+- 创意写作  
+- 非科研用途的自由对话场景  
 
 ---
 
-署名声明 (Attribution): **中文** 所有内容均由特定使用者负责。  **English** The responsibility for all content lies solely with the respective user.
+## 三、Prompt 作为科研输入的基本认知
+
+在科研场景中，Prompt 不应被视为“提问语句”，而应被理解为：
+
+- 对研究边界的**形式化约束**
+- 对可调用信息范围的**显式限定**
+- 对模型生成行为的**输入建模**
+
+因此，一个科研 Prompt 的核心任务不是“让模型发挥”，  
+而是 **防止模型越权发挥**。
+
+---
+
+## 四、科研 Prompt 编写的十条硬约束
+
+以下约束适用于所有科研场景，具有**刚性执行属性**：
+
+1. 不要求模型提出新的科学问题或研究假设  
+2. 不要求模型对结果进行价值判断或创新性评价  
+3. 不允许模型补充未在输入中明确给出的实验事实  
+4. 不允许模型引入新的研究对象、变量或机理解释  
+5. 不使用“推测”“可能意味着”“暗示”等外推性措辞  
+6. 不要求模型进行结论升级或学术地位判断  
+7. 不将模型输出作为科研结论的唯一来源  
+8. Prompt 中必须显式限定任务边界与输出范围  
+9. Prompt 应明确模型的角色为“语言整理或结构辅助”  
+10. 所有最终学术判断必须可回溯至研究者本人
+
+---
+
+## 五、合规 Prompt 的基本结构特征
+
+一个合规的科研 Prompt 通常包含以下要素：
+
+- **任务限定**：明确是改写、整理、压缩或结构重组  
+- **语义边界**：禁止引入新概念、新机制、新结论  
+- **角色声明**：模型仅作为语言或结构辅助工具  
+- **风格约束**：学术、中性、无评价色彩  
+
+---
+
+## 六、不合规 Prompt 的典型风险特征
+
+以下类型 Prompt 在科研场景中应明确避免：
+
+- 要求模型“总结创新点”“提炼突破性意义”
+- 要求模型“判断是否具有重要科学价值”
+- 要求模型“推测潜在机理或未来应用”
+- 未限定输入边界却要求“系统性分析”
+- 使用“请你作为领域专家判断”等角色越权表述
+
+---
+
+## 七、使用方式建议（执行顺序）
+
+在科研活动中使用大语言模型时，建议遵循以下顺序：
+
+1. **先自查边界**  
+   明确哪些内容只能由研究者本人完成  
+
+2. **构建受限 Prompt**  
+   仅允许模型在已知信息范围内进行表达整理  
+
+3. **对输出进行责任回收**  
+   所有文本均需人工审校、确认与承担责任  
+
+4. **关键文本多轮收敛**  
+   通过多次约束而非一次生成完成关键内容  
+
+---
+
+## 八、责任与合规声明
+
+本文档所提供的全部规范仅用于：
+
+> **约束 Prompt 编写行为**
+
+不构成任何形式的科研结论背书、学术担保或免责说明。
+
+所有通过大语言模型生成并用于科研活动的文本内容，其：
+
+- 学术准确性  
+- 合规性  
+- 责任主体  
+
+**均归属于具体使用者本人。**
+
+---
+
+## 九、维护与更新说明
+
+本规范为科研工作中可以 **长期使用文件**，  
+可根据科研实践经验与模型技术发展情况持续更新。
+
+如对具体条款存在理解分歧，应始终遵循以下最高原则：
+
+> **科研责任不可转移，语义边界优先收敛**
+
+---
